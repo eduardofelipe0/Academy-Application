@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block title %}
+Listagem
+{% endblock title %}
+
+{% block tituloPagina %}
+Listagem de livros
+{% endblock tituloPagina %}
+
+{% block content %}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Nome de Usuário</th>
+        <th>Senha</th>
+        <th>Tipo de Usuário</th>
+        <th>ID da Academia</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for usuario in lista %}
+    <tr>
+        <td>{{ usuario.name }}</td>
+        <td>{{ usuario.username }}</td>
+        <td>{{ usuario.password }}</td>
+        <td>{{ usuario.role}}</td>
+        <td>{{ usuario.academy_id }}</td>
+    {% endfor %}
+    </tbody>
+</table>
+<a href="{% url 'cadastrar_usuario' %}">
+    <button type="submit" class="btn btn-primary">
+        Cadastrar
+    </button>
+</a>
+
+{% endblock content %}
