@@ -21,4 +21,5 @@ from .views import *
 urlpatterns = [
     path('listar_usuarios/', listar_usuarios, name='listar_usuarios'),
     path('criar_usuario/', cadastrar_usuario, name='cadastrar_usuario'),
+    path('login/', login, name='login'),
 ]

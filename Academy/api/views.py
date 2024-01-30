@@ -23,3 +23,6 @@ def cadastrar_usuario(request, template_name='criar_usuario.html'):
         form.save()
         return redirect('listar_usuarios')
     return render(request, template_name, {'form': form})
+
+def login(request, template_name='login.html'):
+    return render(request, template_name)
