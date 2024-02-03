@@ -1,28 +1,39 @@
-from django import forms
-from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.http import HttpResponse
+from django.shortcuts import render
 from .models import *
 
-
 # Create your views here.
-class UsuarioForm(forms.ModelForm):
-    class Meta:
-        model = Usuario
-        fields = ['name', 'username', 'password', 'role', 'academy_id']
-        widgets = {
-            'password': forms.PasswordInput()
-        }
 
+@login_required
+def home(request):
+    return render(request, "home.html")
+
+@login_required
 def listar_usuarios(request, template_name='listar_usuarios.html'):
-    usuario = Usuario.objects.all()
-    usuarios = {'lista': usuario}
-    return render(request, template_name, usuarios)
+    user = User.objects.all()
+    users = {'lista': user}
+    return render(request, template_name, users)
 
+@login_required
 def cadastrar_usuario(request, template_name='criar_usuario.html'):
-    form = UsuarioForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return redirect('listar_usuarios')
-    return render(request, template_name, {'form': form})
+    if request.method == "GET":
+        return render(request, template_name)
+    else:
+        username = request.POST.get('username')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
 
-def login(request, template_name='login.html'):
-    return render(request, template_name)
+        user = User.objects.filter(username=username).first()
+
+        if user:
+            return HttpResponse('Já existe um usuário cadastrado com esse username')
+
+        user = User.objects.create_user(username=username, email=email, password=password, first_name=first_name, last_name=last_name)
+        user.save()
+
+        return HttpResponse('Usuário cadastrado com sucesso!')

@@ -1,4 +1,4 @@
-{% extends 'index.html' %}
+{% extends 'base/base.html' %}
 
 {% block title %}
 Listagem
@@ -13,21 +13,21 @@ Listagem de livros
 <table class="table">
     <thead>
     <tr>
-        <th>Nome</th>
+        <th>Primeiro Nome</th>
+        <th>Segundo Nome</th>
         <th>Nome de Usuário</th>
         <th>Senha</th>
-        <th>Tipo de Usuário</th>
-        <th>ID da Academia</th>
+        <th>Email</th>
     </tr>
     </thead>
     <tbody>
-    {% for usuario in lista %}
+    {% for user in lista %}
     <tr>
-        <td>{{ usuario.name }}</td>
-        <td>{{ usuario.username }}</td>
-        <td>{{ usuario.password }}</td>
-        <td>{{ usuario.role}}</td>
-        <td>{{ usuario.academy_id }}</td>
+        <td>{{ user.first_name }}</td>
+        <td>{{ user.last_name }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.password }}</td>
+        <td>{{ user.email}}</td>
     {% endfor %}
     </tbody>
 </table>

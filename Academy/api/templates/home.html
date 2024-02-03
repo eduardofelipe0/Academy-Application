@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block tituloPagina %}
+Listagem de livros
+{% endblock tituloPagina %}
+
+{% block content %}
+    <br>
+    <h2>Olá, {{ request.user.first_name }} {{ request.user.last_name }}, Seja Bem-Vindo!</h2>
+{% endblock content %}
