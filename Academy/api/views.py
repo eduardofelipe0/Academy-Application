@@ -9,7 +9,8 @@ from .models import *
 
 @login_required
 def home(request):
-    return render(request, "home.html")
+    images = ['foto1.jpg', 'foto2.jpg', 'foto3.jpg']
+    return render(request, "home.html", {'images': images})
 
 @login_required
 def listar_usuarios(request, template_name='listar_usuarios.html'):
