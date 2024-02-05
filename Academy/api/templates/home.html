@@ -12,7 +12,8 @@ Listagem de livros
 {% block content %}
 <div class="container">
     <br>
-    <h2>Olá, {{ request.user.first_name }} {{ request.user.last_name }}, Seja Bem-Vindo!</h2>
+    <h3>Olá, {{ request.user.first_name }}!</h3>
+    <hr>
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -23,7 +24,7 @@ Listagem de livros
                     aria-label="Slide 3"></button>
 
         </div>
-        <div class="carousel-inner">
+        <div class="carousel-inner" style="height: 100px;">
             {% for image in images %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
                 <img src="{% static 'images/' %}{{ image }}" class="d-block w-100" alt="{{ image }}">
@@ -40,6 +41,91 @@ Listagem de livros
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
+    </div>
+    <br>
+    <div class="container text-center">
+        <div class="row g-2">
+            <div class="col-6">
+                <div class="p-3">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="{% static 'extras/imagem2.jpg' %}" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Restaurantes</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                        ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="p-3">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="{% static 'extras/imagem1.jpg' %}" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Mercados</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                        ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="p-3">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="{% static 'extras/imagem3.jpg' %}" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Farmácias</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                        ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="p-3">
+                    <div class="card mb-3" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="{% static 'extras/imagem4.jpg' %}" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bebidas</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural
+                                        lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                        ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
