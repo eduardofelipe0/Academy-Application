@@ -23,4 +23,5 @@ urlpatterns = [
     path('listar_usuarios/', listar_usuarios, name='listar_usuarios'),
     path('criar_usuario/', cadastrar_usuario, name='cadastrar_usuario'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('index/', index, name='index'),
 ]
