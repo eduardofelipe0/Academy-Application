@@ -38,7 +38,3 @@ def cadastrar_usuario(request, template_name='criar_usuario.html'):
         user.save()
 
         return HttpResponse('Usuário cadastrado com sucesso!')
-
-
-def index(request):
-    return render(request, 'index.html')
