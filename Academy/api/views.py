@@ -1,40 +1,40 @@
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth.models import User
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import SignUpForm
 from .models import *
+from django.contrib import messages
 
 # Create your views here.
-
 @login_required
 def home(request):
     images = ['foto1.jpg', 'foto2.jpg', 'foto3.jpg']
     return render(request, "home.html", {'images': images})
 
-@login_required
-def listar_usuarios(request, template_name='listar_usuarios.html'):
-    user = User.objects.all()
-    users = {'lista': user}
-    return render(request, template_name, users)
-
-@login_required
-def cadastrar_usuario(request, template_name='criar_usuario.html'):
-    if request.method == "GET":
-        return render(request, template_name)
+def signup(request, template_name='registration/login.html'):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            messages.success(request, 'Cadastro realizado com sucesso! Você está logado agora.')
+            return redirect('home')
     else:
-        username = request.POST.get('username')
-        email = request.POST.get('email')
-        password = request.POST.get('password')
-        first_name = request.POST.get('first_name')
-        last_name = request.POST.get('last_name')
+        form = SignUpForm()
+    return render(request, template_name, {'form': form})
 
-        user = User.objects.filter(username=username).first()
-
-        if user:
-            return HttpResponse('Já existe um usuário cadastrado com esse username')
-
-        user = User.objects.create_user(username=username, email=email, password=password, first_name=first_name, last_name=last_name)
-        user.save()
-
-        return HttpResponse('Usuário cadastrado com sucesso!')
+"""if request.method == 'POST':
+        print(request.POST)
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('home')
+    else:
+        form = SignUpForm()
+    return render(request, template_name, {'form': form})"""

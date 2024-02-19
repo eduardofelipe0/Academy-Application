@@ -11,9 +11,7 @@ Listagem de livros
 
 {% block content %}
 <div class="container">
-    <br>
-    <h3>Olá, {{ request.user.first_name }}!</h3>
-    <hr>
+    <br><br>
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
@@ -22,12 +20,11 @@ Listagem de livros
                     aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                     aria-label="Slide 3"></button>
-
         </div>
         <div class="carousel-inner" style="height: 100px;">
             {% for image in images %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                <img src="{% static 'images/' %}{{ image }}" class="d-block w-100" alt="{{ image }}">
+                <img src="{% static 'images/' %}{{ image }}" alt="{{ image }}">
             </div>
             {% endfor %}
         </div>

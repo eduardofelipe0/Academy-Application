@@ -20,7 +20,6 @@ from .views import *
 
 urlpatterns = [
     path('home/', home, name='home'),
-    path('listar_usuarios/', listar_usuarios, name='listar_usuarios'),
-    path('criar_usuario/', cadastrar_usuario, name='cadastrar_usuario'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/signup/', signup, name='signup'),
 ]

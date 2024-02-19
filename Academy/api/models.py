@@ -17,3 +17,5 @@ class Usuario(models.Model):
     role = models.CharField(max_length=50, choices=UserRoles.choices)
     academy_id = models.PositiveSmallIntegerField()
 
+
+
