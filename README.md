@@ -29,23 +29,26 @@ A metodologia deste projeto é baseada em Reinforcement Learning (RL), com foco 
 
 **3.1 Modelagem do Ambiente**  
 
-O ambiente é inicializado com um grid preenchido por paredes, exceto pelos pontos de início e fim, que são posicionados em cantos opostos. O agente interage com o ambiente selecionando ações para modificar células específicas do grid. As ações disponíveis incluem:
+O ambiente é inicializado com um grid preenchido por paredes, exceto pelos pontos de início e fim, que são posicionados em cantos opostos. O agente interage com o ambiente selecionando ações para modificar células específicas do grid. As ações disponíveis incluem:  
 
-Criar paredes: Bloqueia a célula, impedindo a passagem.
+&#8226; Criar paredes: Bloqueia a célula, impedindo a passagem.
 
-Criar salas: Define áreas abertas que podem ser conectadas por corredores.
+&#8226; Criar salas: Define áreas abertas que podem ser conectadas por corredores.
 
-Criar corredores: Conecta salas e outros elementos do mapa.
+&#8226; Criar corredores: Conecta salas e outros elementos do mapa.
 
-Posicionar tesouros: Adiciona pontos de interesse que devem ser coletados.
+&#8226; Posicionar tesouros: Adiciona pontos de interesse que devem ser coletados.
 
-Posicionar inimigos: Introduz desafios adicionais ao mapa.
+&#8226; Posicionar inimigos: Introduz desafios adicionais ao mapa.  
 
-3.2 Linguagem de Programação
-A linguagem de programação utilizada foi Python, devido à sua vasta gama de bibliotecas e frameworks que suportam o desenvolvimento de algoritmos de RL, como NumPy, Matplotlib, e Gym.
+**3.2 Linguagem de Programação**  
 
-3.3 Algoritmo de Reinforcement Learning (RL)
-O algoritmo de RL foi implementado utilizando Q-learning, uma técnica clássica de RL que aprende a política ótima para maximizar a recompensa acumulada ao longo do tempo. O agente é treinado para gerar mapas que conectam o ponto de início ao ponto de fim, passando por todos os tesouros. A função de recompensa foi projetada para incentivar a criação de caminhos válidos e a coleta de tesouros.
+A linguagem de programação utilizada foi Python, devido à sua vasta gama de bibliotecas e frameworks que suportam o desenvolvimento de algoritmos de RL, como NumPy, Matplotlib, e Gym.  
+
+**3.3 Algoritmo de Reinforcement Learning (RL)**  
+
+O algoritmo de RL foi implementado utilizando Q-learning, uma técnica clássica de RL que aprende a política ótima para maximizar a recompensa acumulada ao longo do tempo. O agente é treinado para gerar mapas que conectam o ponto de início ao ponto de fim, passando por todos os tesouros. A função de recompensa foi projetada para incentivar a criação de caminhos válidos e a coleta de tesouros.  
+
 4. Implementação
 4.1 Configurações Iniciais
 O código define um grid de tamanho fixo (GRID_SIZE = 15) e uma lista de ações possíveis (ACTIONS = ["wall", "room", "corridor", "treasure", "enemy"]). O grid é inicializado com paredes, e os pontos de início e fim são posicionados nos cantos opostos do grid.
