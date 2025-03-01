@@ -7,18 +7,28 @@ Recife (PE) - Brasil
 
 eduardo.fsilva3@ufrpe.br, … , … 
 
-**Abstract.** This article focuses on the application of Reinforcement Learning (RL) for the automatic generation of Dungeons & Dragons (D&D) maps. The study involves the development of a Q-learning-based algorithm that generates functional maps, connecting a starting point to an endpoint while passing through a predefined number of treasures. The algorithm is trained in a simulated environment where the agent learns to create rooms, corridors, and place treasures and enemies, while being rewarded for ensuring map connectivity and functionality. The results demonstrate the effectiveness of the approach, highlighting the potential of RL for automated and adaptable level generation in games. Additionally, the project emphasizes the importance of RL techniques for procedural content generation, enabling developers to create dynamic and personalized experiences for players.
-Keywords: Procedural generation. Reinforcement learning. Digital games. Maps. Dungeons & Dragons.
-Resumo. Este artigo tem como foco a aplicação de Reinforcement Learning (RL) para a geração automática de mapas de Dungeons & Dragons (D&D). O estudo envolve o desenvolvimento de um algoritmo baseado em Q-learning que gera mapas funcionais, conectando um ponto de início a um ponto de fim e passando por uma quantidade pré-definida de tesouros. O algoritmo é treinado em um ambiente simulado, onde o agente aprende a criar salas, corredores e posicionar tesouros e inimigos, enquanto é recompensado por garantir a conectividade e a funcionalidade do mapa. Os resultados obtidos demonstram a eficácia da abordagem, evidenciando o potencial do RL para a criação de níveis em jogos de forma automatizada e adaptável. Além disso, o projeto destaca a importância de técnicas de RL para a geração de conteúdo procedural, permitindo que desenvolvedores criem experiências dinâmicas e personalizadas para os jogadores.
-Palavras-chave: Geração procedural. Aprendizado por reforço. Jogos digitais. Mapas. Dungeons & Dragons.
+**Abstract.** This article focuses on the application of Reinforcement Learning (RL) for the automatic generation of Dungeons & Dragons (D&D) maps. The study involves the development of a Q-learning-based algorithm that generates functional maps, connecting a starting point to an endpoint while passing through a predefined number of treasures. The algorithm is trained in a simulated environment where the agent learns to create rooms, corridors, and place treasures and enemies, while being rewarded for ensuring map connectivity and functionality. The results demonstrate the effectiveness of the approach, highlighting the potential of RL for automated and adaptable level generation in games. Additionally, the project emphasizes the importance of RL techniques for procedural content generation, enabling developers to create dynamic and personalized experiences for players.  
 
-1. Introdução
-A geração procedural de conteúdo é uma área da computação amplamente utilizada no desenvolvimento de jogos digitais. Entre os diversos métodos, a utilização de Reinforcement Learning (RL) para a geração de mapas tem se destacado pela capacidade de criar ambientes dinâmicos e adaptáveis. Este projeto implementa um algoritmo de RL para gerar mapas de Dungeons & Dragons (D&D) considerando parâmetros que serão detalhados mais a frente. O algoritmo utiliza uma abordagem de Q-learning para aprender a gerar mapas que atendem aos critérios estabelecidos.
-2. Objetivo
-O objetivo deste projeto é desenvolver um modelo baseado em RL que gere mapas de D&D, garantindo a conexão entre o ponto inicial e o ponto final, bem como a passagem obrigatória pelos tesouros, respeitando uma resolução predefinida. Além disso, a implementação considera a presença de inimigos e a necessidade de criar um equilíbrio entre desafios e recompensas para o jogador.
-3. Metodologia
-A metodologia deste projeto é baseada em Reinforcement Learning (RL), com foco na aplicação do algoritmo Q-learning para a geração procedural de mapas de Dungeons & Dragons (D&D). O ambiente de simulação é modelado como um grid bidimensional de tamanho fixo (GRID_SIZE = 15), onde cada célula pode ser modificada pelo agente para representar diferentes elementos, como paredes, salas, corredores, tesouros e inimigos. O objetivo do agente é gerar um mapa que conecte um ponto de início a um ponto de fim, passando por todos os tesouros especificados.
-3.1 Modelagem do Ambiente
+Keywords: Procedural generation. Reinforcement learning. Digital games. Maps. Dungeons & Dragons.  
+
+**Resumo.** Este artigo tem como foco a aplicação de Reinforcement Learning (RL) para a geração automática de mapas de Dungeons & Dragons (D&D). O estudo envolve o desenvolvimento de um algoritmo baseado em Q-learning que gera mapas funcionais, conectando um ponto de início a um ponto de fim e passando por uma quantidade pré-definida de tesouros. O algoritmo é treinado em um ambiente simulado, onde o agente aprende a criar salas, corredores e posicionar tesouros e inimigos, enquanto é recompensado por garantir a conectividade e a funcionalidade do mapa. Os resultados obtidos demonstram a eficácia da abordagem, evidenciando o potencial do RL para a criação de níveis em jogos de forma automatizada e adaptável. Além disso, o projeto destaca a importância de técnicas de RL para a geração de conteúdo procedural, permitindo que desenvolvedores criem experiências dinâmicas e personalizadas para os jogadores.  
+
+Palavras-chave: Geração procedural. Aprendizado por reforço. Jogos digitais. Mapas. Dungeons & Dragons.  
+
+**1. Introdução**  
+
+A geração procedural de conteúdo é uma área da computação amplamente utilizada no desenvolvimento de jogos digitais. Entre os diversos métodos, a utilização de Reinforcement Learning (RL) para a geração de mapas tem se destacado pela capacidade de criar ambientes dinâmicos e adaptáveis. Este projeto implementa um algoritmo de RL para gerar mapas de Dungeons & Dragons (D&D) considerando parâmetros que serão detalhados mais a frente. O algoritmo utiliza uma abordagem de Q-learning para aprender a gerar mapas que atendem aos critérios estabelecidos.  
+
+**2. Objetivo**  
+
+O objetivo deste projeto é desenvolver um modelo baseado em RL que gere mapas de D&D, garantindo a conexão entre o ponto inicial e o ponto final, bem como a passagem obrigatória pelos tesouros, respeitando uma resolução predefinida. Além disso, a implementação considera a presença de inimigos e a necessidade de criar um equilíbrio entre desafios e recompensas para o jogador.  
+
+**3. Metodologia**  
+
+A metodologia deste projeto é baseada em Reinforcement Learning (RL), com foco na aplicação do algoritmo Q-learning para a geração procedural de mapas de Dungeons & Dragons (D&D). O ambiente de simulação é modelado como um grid bidimensional de tamanho fixo (GRID_SIZE = 15), onde cada célula pode ser modificada pelo agente para representar diferentes elementos, como paredes, salas, corredores, tesouros e inimigos. O objetivo do agente é gerar um mapa que conecte um ponto de início a um ponto de fim, passando por todos os tesouros especificados.  
+
+**3.1 Modelagem do Ambiente**  
+
 O ambiente é inicializado com um grid preenchido por paredes, exceto pelos pontos de início e fim, que são posicionados em cantos opostos. O agente interage com o ambiente selecionando ações para modificar células específicas do grid. As ações disponíveis incluem:
 
 Criar paredes: Bloqueia a célula, impedindo a passagem.
