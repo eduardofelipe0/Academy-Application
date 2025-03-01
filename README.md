@@ -1,7 +1,7 @@
 # GERAÇÃO DE NÍVEIS PARA JOGOS UTILIZANDO REINFORCEMENT LEARNING (RL)
 Bruno Simões, Eduardo Silva e Pedro Antônio
 
-Universidade Federal Rural de Pernambuco (UFRPE)
+Universidade Federal Rural de Pernambuco (UFRPE)<br>
 Recife (PE) - Brasil
 eduardo.fsilva3@ufrpe.br, … , … 
 
