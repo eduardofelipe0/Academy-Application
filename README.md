@@ -1,8 +1,10 @@
 # GERAÇÃO DE NÍVEIS PARA JOGOS UTILIZANDO REINFORCEMENT LEARNING (RL)
 Bruno Simões, Eduardo Silva e Pedro Antônio
 
-Universidade Federal Rural de Pernambuco (UFRPE)<br>
-Recife (PE) - Brasil<br>
+Universidade Federal Rural de Pernambuco (UFRPE)  
+
+Recife (PE) - Brasil  
+
 eduardo.fsilva3@ufrpe.br, … , … 
 
 Abstract. This article focuses on the application of Reinforcement Learning (RL) for the automatic generation of Dungeons & Dragons (D&D) maps. The study involves the development of a Q-learning-based algorithm that generates functional maps, connecting a starting point to an endpoint while passing through a predefined number of treasures. The algorithm is trained in a simulated environment where the agent learns to create rooms, corridors, and place treasures and enemies, while being rewarded for ensuring map connectivity and functionality. The results demonstrate the effectiveness of the approach, highlighting the potential of RL for automated and adaptable level generation in games. Additionally, the project emphasizes the importance of RL techniques for procedural content generation, enabling developers to create dynamic and personalized experiences for players.
