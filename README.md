@@ -1,10 +1,16 @@
 # Aprendizado por Imitação Profunda na Godot Engine: Treinando Agentes Virtuais com Demonstrações Humanas
 
+![image](https://github.com/user-attachments/assets/d178a3cd-a8b7-4d44-8379-452a5f16a828)  
+*Imitation Learning com Godot RL Agents*
+
 ## Resumo
 
 O aprendizado por imitação profunda desempenha um papel fundamental no treinamento de agentes inteligentes. Observa-se uma tendência crescente na utilização de demonstrações humanas para acelerar o processo de aprendizado em ambientes complexos. Visando a uma abordagem eficiente e escalável, este trabalho propõe a aplicação de deep imitation learning em ambientes desenvolvidos na Godot Engine, utilizando o framework Godot RL Agents. No método proposto, o agente é treinado por meio de comportamentos registrados por um especialista humano, captando padrões de ação em um ambiente de minijogo. Essa abordagem permite uma transferência direta de conhecimento, garantindo eficácia na execução de tarefas específicas. A arquitetura utilizada combina redes neurais com técnicas de aprendizado supervisionado, otimizando o processo de imitação. Para validar a proposta, um exemplo prático foi implementado, demonstrando a capacidade do agente de reproduzir comportamentos humanos com alta taxa de sucesso. Os resultados obtidos confirmam a viabilidade da abordagem proposta para o treinamento de agentes inteligentes em ambientes virtuais.
 
 **Palavras-chave:** Deep Imitation Learning, Reinforcement Learning, Godot Engine, Godot RL Agents, Aprendizado por Imitação.
+
+[![Godot](https://img.shields.io/badge/Godot-478CBF?style=flat&logo=godot-engine)](https://godotengine.org)
+[![Python](https://img.shields.io/badge/Python-3.10+-yellow?style=flat&logo=python)](https://python.org)
 
 ## Introdução
 
