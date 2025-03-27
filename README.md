@@ -40,7 +40,7 @@ A área de Aprendizado por Imitação (Imitation Learning - IL) busca capacitar 
 
 O BC é uma das técnicas mais simples e diretas de IL. Ele consiste em treinar um modelo para mapear diretamente as observações do ambiente às ações demonstradas pelo expert. Matematicamente, o objetivo do BC é minimizar a seguinte função de perda:
 
-![Figura 1 – Fórmula da função de perda Behavioral Cloning](URL_DA_IMAGEM_FIGURA_1)
+L(θ) = -Σ log πθ(a|s)
 
 onde π θ (a∣s) representa a política do agente parametrizada por θ, s é o estado observado, a é a ação demonstrada pelo expert e D expert é o conjunto de demonstrações do expert. O BC é eficaz quando as demonstrações cobrem uma ampla gama de estados e ações relevantes, mas pode sofrer com o problema de "desvio de distribuição" (distributional shift) quando o agente encontra estados fora da distribuição de treinamento.
 
