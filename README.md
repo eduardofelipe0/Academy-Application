@@ -48,7 +48,7 @@ onde π θ (a∣s) representa a política do agente parametrizada por θ, s é o
 
 O GAIL, por sua vez, adota uma abordagem adversarial para o aprendizado de políticas. Ele utiliza uma rede discriminadora para distinguir entre as ações do agente e as ações do expert, enquanto o agente tenta enganar o discriminador gerando ações que se assemelham às do expert. O GAIL formula o problema de aprendizado como um jogo minimax entre o agente e o discriminador. A função de perda do GAIL pode ser expressa como:
 
-![Figura 2 – Fórmula da função de perda no GAIL](URL_DA_IMAGEM_FIGURA_2)
+$$ min_π max_D E_π[log D(s,a)] + E_π*[log(1-D(s,a))] $$
 
 onde Dw​(s,a) representa a saída do discriminador parametrizado por W. O GAIL é capaz de aprender políticas complexas e robustas, mesmo em ambientes com demonstrações limitadas, pois não depende diretamente da função de recompensa do ambiente.
 
@@ -62,7 +62,7 @@ Stable Baselines3 (SB3) é uma biblioteca Python que fornece implementações de
 
 A Godot Engine é um motor de jogo 2D e 3D de código aberto e gratuito, conhecido por sua flexibilidade e facilidade de uso. Sua arquitetura baseada em nós permite a criação de jogos complexos de forma modular e intuitiva. A Godot suporta várias linguagens de script, incluindo GDScript (sua linguagem nativa) e C#, o que a torna versátil para diferentes tipos de projetos.
 
-![Figura 3 – Interface inicial da Godot Engine](URL_DA_IMAGEM_FIGURA_3)
+![Figura 3 – Interface inicial da Godot Engine](![image](https://github.com/user-attachments/assets/7ee6a794-8a0c-4d2c-a212-723d0c75ad05))
 
 ### 3.2 Ambiente de Demonstração
 
