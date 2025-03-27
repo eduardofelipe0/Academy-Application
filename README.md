@@ -84,3 +84,83 @@ A preparação do ambiente para o experimento envolveu os seguintes passos:
 * Coleta de Demonstrações do Expert: A cena de demonstração foi executada, e o expert jogou pelo menos 30 episódios para coletar dados de demonstração. Os dados foram exportados no arquivo expert_demos.json ao finalizar o jogo utilizando Alt+F4.
 * Exportação do Jogo na Godot Engine: O jogo foi exportado para criar um executável independente.
 * Gravação de Demos (Opcional): As demos foram gravadas para visualização posterior
+
+## 4.2 Implementação do Aprendizado por Imitação
+
+O script `sb3_imitation.py` implementa o aprendizado por imitação utilizando as bibliotecas `imitation` e `stable-baselines3`. Os trechos de código mais importantes incluem:
+
+**Carregamento das Demonstrações:**
+
+```python
+trajectories = []
+for file_path in args.demo_files:
+    with open(file_path, "r") as file:
+        data = json.load(file)
+
+    for traj in data:
+        trajectories.append(
+            imitation.data.rollout.types.Trajectory(
+                obs=np.array(traj[0]),
+                acts=np.array(traj[1]),
+                infos=None,
+                terminal=True,
+            )
+        )
+```
+
+**Inicialização do Ambiente e do Modelo:**
+
+```python
+env = SBGSingleObsEnv(
+    env_path=args.env_path,
+    show_window=args.viz,
+    seed=args.seed,
+    n_parallel=args.n_parallel,
+    speedup=args.speedup,
+    obs_key="obs",
+)
+
+env = VecMonitor(env)
+
+learner = PPO(
+    env=env,
+    policy="MlpPolicy",
+    # ... outros parâmetros ...
+)
+```
+
+**Treinamento com BC e GAIL:**
+
+```python
+if args.bc_epochs > 0:
+    bc_trainer = bc.BC(
+        # ...
+    )
+    bc_trainer.train(n_epochs=args.bc_epochs)
+
+if args.gail_timesteps > 0:
+    gail_trainer = GAIL(
+        # ...
+    )
+    gail_trainer.train(args.gail_timesteps)
+```
+
+## Referências
+
+1.  **Godot RL Agents Documentation.** Disponível em: [https://github.com/edbeeching/godot_rl_agents](https://github.com/edbeeching/godot_rl_agents).
+
+2.  **Imitation Learning with Godot RL Agents.** Disponível em: [https://huggingface.co/learn/deep-rl-course/unitbonus5/introduction](https://huggingface.co/learn/deep-rl-course/unitbonus5/introduction). Acesso em: 26 mar. 2025.
+
+3.  **ENGINE, G. Download for Windows.** Disponível em: [https://godotengine.org/download/windows/](https://godotengine.org/download/windows/).
+
+4.  **Ho, J., & Ermon, S.** (2016). Generative adversarial imitation learning. In *Advances in neural information processing systems* (pp. 4565-4573).
+
+5.  **Hussein, A., Gaber, T., Elyan, E., & Jayne, C.** (2017). Imitation learning: A survey of learning methods. *ACM Computing Surveys (CSUR)*, *50*(2), 1-35.
+
+6.  **Ng, A. Y., & Russell, S. J.** (2000). Algorithms for inverse reinforcement learning. In *Icml* (Vol. 1, p. 663).
+
+7.  **Osa, T., Pajarinen, J., Neumann, G., Bagnell, J. A., & Peters, J.** (2018). An algorithmic perspective on imitation learning. *Foundations and Trends® in Robotics*, *7*(1-2), 1-179.
+
+8.  **Pomerleau, D. A.** (1989). Alvinn: An autonomous land vehicle in a neural network. In *Advances in neural information processing systems* (pp. 305-313).
+
+9.  **Ross, S., Gordon, G., & Bagnell, D.** (2011). A reduction of imitation learning and structured prediction to no-regret online learning. In *Proceedings of the fourteenth international conference on artificial intelligence and statistics* (pp. 627-635).
