@@ -62,7 +62,7 @@ Stable Baselines3 (SB3) é uma biblioteca Python que fornece implementações de
 
 A Godot Engine é um motor de jogo 2D e 3D de código aberto e gratuito, conhecido por sua flexibilidade e facilidade de uso. Sua arquitetura baseada em nós permite a criação de jogos complexos de forma modular e intuitiva. A Godot suporta várias linguagens de script, incluindo GDScript (sua linguagem nativa) e C#, o que a torna versátil para diferentes tipos de projetos.
 
-![Figura 3 – Interface inicial da Godot Engine](![image](https://github.com/user-attachments/assets/7ee6a794-8a0c-4d2c-a212-723d0c75ad05))
+![image](https://github.com/user-attachments/assets/48eb5ab6-3f74-4c20-a717-952b7fb4c96e)
 
 ### 3.2 Ambiente de Demonstração
 
