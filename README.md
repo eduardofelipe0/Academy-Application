@@ -72,44 +72,88 @@ O ambiente de demonstração utilizado neste estudo, é um cenário simples proj
 
 ## 4. Metodologia
 
-### 4.1 Preparação do Ambiente
+### 4.1 Preparação do Ambiente: Guia Passo a Passo
 
-A preparação do ambiente para o experimento envolveu os seguintes passos:
+Para reproduzir este experimento, siga os passos abaixo para configurar o ambiente:
 
-* **Instalação da Godot Engine (.NET):** A versão .NET da Godot Engine foi instalada para permitir a integração com bibliotecas Python.
-* **Criação do Ambiente Virtual Python:** Um ambiente virtual Python foi criado para isolar as dependências do projeto. Isso garante que as bibliotecas instaladas para este projeto não entrem em conflito com outras instalações Python no sistema. Os seguintes comandos foram usados no terminal para criar e ativar o ambiente virtual:
+1.  **Instalação da Godot Engine (.NET):**
 
-    ```bash
-    # Cria o ambiente virtual chamado "venv"
-    python -m venv venv
+    * Baixe a versão .NET da Godot Engine no seguinte link: [https://godotengine.org/download/windows/](https://godotengine.org/download/windows/).
+    * Extraia o arquivo baixado e execute o executável da Godot Engine.
 
-    # Ativa o ambiente virtual (Windows)
-    venv\Scripts\activate
+2.  **Criação do Ambiente Virtual Python:**
 
-    # Ativa o ambiente virtual (macOS/Linux)
-    source venv/bin/activate
-    ```
+    * Abra o terminal (prompt de comando no Windows ou terminal no macOS/Linux).
+    * Navegue até o diretório onde você deseja criar o ambiente virtual.
+    * Execute o seguinte comando para criar o ambiente virtual chamado "venv":
 
-* **Instalação das Bibliotecas Necessárias:** As bibliotecas `godot-rl` e `imitation` foram instaladas utilizando o gerenciador de pacotes `pip`. Essas bibliotecas fornecem as ferramentas necessárias para interagir com a Godot Engine e implementar algoritmos de aprendizado por imitação. Os seguintes comandos foram usados para instalar as bibliotecas:
+        ```bash
+        python -m venv venv
+        ```
 
-    ```bash
-    pip install godot-rl
-    pip install imitation
-    ```
+    * Ative o ambiente virtual:
+        * No Windows:
 
-* **Aquisição do Ambiente de Demonstração:** O ambiente de demonstração foi baixado, através do link disponível em [https://huggingface.co/learn/deep-rl-course/unitbonus5/getting-started](https://huggingface.co/learn/deep-rl-course/unitbonus5/getting-started).
-* **Configuração do Script do Robô:** O script do robô foi configurado para definir os sensores, a função de recompensa e outras propriedades relevantes.
-* **Coleta de Demonstrações do Expert:** A cena de demonstração foi executada, e o expert jogou pelo menos 30 episódios para coletar dados de demonstração. Os dados foram exportados no arquivo `expert_demos.json` ao finalizar o jogo utilizando Alt+F4.
-* **Exportação do Jogo na Godot Engine:** O jogo foi exportado para criar um executável independente.
-* **Gravação de Demos (Opcional):** As demos foram gravadas para visualização posterior.
-* **Download do Script de Treinamento:** O script `sb3_imitation.py` foi baixado do repositório GitHub fornecido, disponível em [https://github.com/edbeeching/godot_rl_agents/blob/main/examples/sb3_imitation.py](https://github.com/edbeeching/godot_rl_agents/blob/main/examples/sb3_imitation.py).
-* **Execução do Script de Treinamento:** O script `sb3_imitation.py` foi executado com os seguintes argumentos:
+            ```bash
+            venv\Scripts\activate
+            ```
 
-    ```bash
-    sb3_imitation.py --env_path="path_to_ILTutorial_executable" --bc_epochs=100 --gail_timesteps=1450000 --demo_files "path_to_expert_demos.json" --n_parallel=4 --speedup=20 --onnx_export_path=model.onnx --experiment_name=ILTutorial
-    ```
+        * No macOS/Linux:
 
-* **Aplicação do Modelo Treinado:** Após o treinamento, o modelo `model.onnx` foi aplicado ao robô no ambiente da Godot Engine.
+            ```bash
+            source venv/bin/activate
+            ```
+
+3.  **Instalação das Bibliotecas Necessárias:**
+
+    * Com o ambiente virtual ativado, execute os seguintes comandos para instalar as bibliotecas `godot-rl` e `imitation`:
+
+        ```bash
+        pip install godot-rl
+        pip install imitation
+        ```
+
+4.  **Aquisição do Ambiente de Demonstração:**
+
+    * Baixe o ambiente de demonstração no seguinte link: [https://huggingface.co/learn/deep-rl-course/unitbonus5/getting-started](https://huggingface.co/learn/deep-rl-course/unitbonus5/getting-started).
+    * Extraia o arquivo baixado e coloque-o em um diretório de sua escolha.
+
+5.  **Configuração do Script do Robô:**
+
+    * Abra o projeto do ambiente de demonstração na Godot Engine.
+    * Edite o script do robô para configurar os sensores, a função de recompensa e outras propriedades relevantes, conforme necessário para o experimento.
+
+6.  **Coleta de Demonstrações do Expert:**
+
+    * Execute a cena de demonstração na Godot Engine.
+    * Jogue pelo menos 30 episódios para coletar dados de demonstração.
+    * Exporte os dados de demonstração no arquivo `expert_demos.json` ao finalizar o jogo utilizando Alt+F4.
+
+7.  **Exportação do Jogo na Godot Engine:**
+
+    * Exporte o jogo na Godot Engine para criar um executável independente.
+
+8.  **Gravação de Demos (Opcional):**
+
+    * Grave as demos para visualização posterior, se desejar.
+
+9.  **Download do Script de Treinamento:**
+
+    * Baixe o script `sb3_imitation.py` no seguinte link: [https://github.com/edbeeching/godot_rl_agents/blob/main/examples/sb3_imitation.py](https://github.com/edbeeching/godot_rl_agents/blob/main/examples/sb3_imitation.py).
+
+10. **Execução do Script de Treinamento:**
+
+    * Abra o terminal no diretório onde você salvou o script `sb3_imitation.py`.
+    * Execute o seguinte comando, substituindo `"path_to_ILTutorial_executable"` pelo caminho do executável do jogo exportado e `"path_to_expert_demos.json"` pelo caminho do arquivo `expert_demos.json`:
+
+        ```bash
+        sb3_imitation.py --env_path="path_to_ILTutorial_executable" --bc_epochs=100 --gail_timesteps=1450000 --demo_files "path_to_expert_demos.json" --n_parallel=4 --speedup=20 --onnx_export_path=model.onnx --experiment_name=ILTutorial
+        ```
+
+11. **Aplicação do Modelo Treinado:**
+
+    * Após o treinamento, o modelo `model.onnx` será gerado.
+    * Aplique o modelo `model.onnx` ao robô no ambiente da Godot Engine.
 
 ## 4.2 Implementação do Aprendizado por Imitação
 
