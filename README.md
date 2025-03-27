@@ -1,7 +1,7 @@
 # Deep Imitation Learning para Agentes Inteligentes: Implementação e Análise na Godot Engine
 
-![Cover Image](![image](https://github.com/user-attachments/assets/d178a3cd-a8b7-4d44-8379-452a5f16a828)  
-*Imagem ilustrativa de inteligência artificial e aprendizado de máquina*
+(![image](https://github.com/user-attachments/assets/d178a3cd-a8b7-4d44-8379-452a5f16a828)  
+*Imitation Learning com Godot RL Agents*
 
 ## Resumo
 
