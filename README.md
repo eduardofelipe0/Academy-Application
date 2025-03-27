@@ -30,12 +30,18 @@ O **Aprendizado por Imitação** (Imitation Learning) surge como abordagem inova
 - Elimina necessidade de funções de recompensa manuais
 - Permite aprendizado direto com especialistas
 
-## 1. Abordagem Proposta
+## 3. Fundamentação Teórica
 
-```python
-# Exemplo de inicialização do ambiente
-env = SBGSingleObsEnv(
-    env_path=args.env_path,
-    show_window=args.viz,
-    seed=args.seed
-)
+A área de **Aprendizado por Imitação** (Imitation Learning - IL) capacita agentes a aprenderem políticas comportamentais a partir de demonstrações especializadas. Diferente do Aprendizado por Reforço (Reinforcement Learning - RL) que depende de recompensas, o IL utiliza exemplos diretos de comportamento, sendo ideal para cenários onde:
+
+- Funções de recompensa são complexas de definir
+- Ambientes são vastos e difíceis de explorar
+- Comportamentos especializados são difíceis de especificar
+
+### 3.1 Behavioral Cloning (BC)
+
+A técnica mais direta de IL, onde um modelo aprende a mapear observações→ações diretamente das demonstrações.
+
+**Função de perda**:
+```math
+L(θ) = -𝔼_(s,a)∼D_expert[log π_θ(a|s)]
