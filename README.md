@@ -102,7 +102,7 @@ A preparação do ambiente para o experimento envolveu os seguintes passos:
 * **Coleta de Demonstrações do Expert:** A cena de demonstração foi executada, e o expert jogou pelo menos 30 episódios para coletar dados de demonstração. Os dados foram exportados no arquivo `expert_demos.json` ao finalizar o jogo utilizando Alt+F4.
 * **Exportação do Jogo na Godot Engine:** O jogo foi exportado para criar um executável independente.
 * **Gravação de Demos (Opcional):** As demos foram gravadas para visualização posterior.
-* **Download do Script de Treinamento:** O script `sb3_imitation.py` foi baixado do repositório GitHub fornecido.
+* **Download do Script de Treinamento:** O script `sb3_imitation.py` foi baixado do repositório GitHub fornecido, disponível em [https://github.com/edbeeching/godot_rl_agents/blob/main/examples/sb3_imitation.py](https://github.com/edbeeching/godot_rl_agents/blob/main/examples/sb3_imitation.py).
 * **Execução do Script de Treinamento:** O script `sb3_imitation.py` foi executado com os seguintes argumentos:
 
     ```bash
