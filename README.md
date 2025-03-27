@@ -179,10 +179,6 @@ A abordagem proposta, que combina a flexibilidade da Godot Engine com as capacid
 
 Os resultados obtidos neste estudo abrem portas para diversas aplicações futuras, como a criação de personagens não jogáveis (NPCs) com comportamentos mais realistas e adaptáveis, a geração automática de conteúdo de jogos e o desenvolvimento de ambientes de treinamento personalizados para robôs virtuais. Além disso, a metodologia proposta pode ser estendida para outros domínios além dos jogos, como simulações de treinamento em realidade virtual e aumentada.
 
-Embora este trabalho tenha demonstrado o potencial do IL na Godot Engine, algumas limitações merecem atenção em pesquisas futuras. A qualidade e quantidade dos dados de demonstração continuam sendo fatores críticos para o desempenho dos agentes treinados. A exploração de técnicas para lidar com dados de demonstração limitados ou ruidosos, bem como o desenvolvimento de métodos para generalizar o aprendizado para novos ambientes, são áreas promissoras para investigação.
-
-Em suma, este estudo contribui para a crescente área de pesquisa em IL, oferecendo uma metodologia prática e eficaz para o treinamento de agentes inteligentes em ambientes de jogos. Acreditamos que a combinação da Godot Engine com as técnicas de IL tem o potencial de revolucionar a forma como os jogos são desenvolvidos e experienciados, abrindo caminho para a criação de mundos virtuais mais imersivos e interativos.
-
 ## Referências
 
 1.  **Godot RL Agents Documentation.** Disponível em: [https://github.com/edbeeching/godot_rl_agents](https://github.com/edbeeching/godot_rl_agents).
