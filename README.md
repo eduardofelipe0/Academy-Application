@@ -68,7 +68,7 @@ A Godot Engine é um motor de jogo 2D e 3D de código aberto e gratuito, conheci
 
 O ambiente de demonstração utilizado neste estudo, é um cenário simples projetado para ilustrar os conceitos de IL. Nele, um robô precisa navegar por um cenário para alcançar um objetivo. O ambiente fornece observações sensoriais ao robô e permite que ele execute ações para se mover. A complexidade do ambiente pode ser ajustada para explorar diferentes aspectos do aprendizado por imitação.
 
-[![Figura 4 – Interface da Godot Engine com o jogo em execução](URL_DA_IMAGEM_FIGURA_4)](https://drive.google.com/file/d/1Whh_v1ZoW5OF3CJIUtMMFNpllOJL2KAd/view?usp=sharing)
+![image](https://github.com/user-attachments/assets/50f0aaa5-6e8c-4206-bfd4-3243425de649)
 
 ## 4. Metodologia
 
